@@ -89,7 +89,7 @@ module Aws
               else
               raise ArgumentError, 'Unsupported wrap-alg: ' \
                 "#{envelope['x-amz-wrap-alg']}"
-            end
+              end
             iv = decode64(envelope['x-amz-iv'])
             Utils.aes_decryption_cipher(:GCM, key, iv)
           end
